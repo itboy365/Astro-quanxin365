@@ -1,17 +1,51 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+    <header class="brand-section">
+        <h1 class="logo">权芯365</h1>
+        <span class="subtitle">中国芯，中国域名，365天在线的中国开发者。</span>
+    </header>
+
+    <section class="intro-section" aria-label="个人简介">
+        <p>河北保定的90后小伙儿。从 HTML 到 Python，从虚拟主机到云函数，用代码把想法一个个落地。</p>
+        <p>权芯365 是个人技术作品集，也是这些年沉淀下来的数字足迹。</p>
+    </section>
+
+    <main class="works-grid" aria-label="技术作品">
+        <Card 
+            icon="🔥" 
+            title="每日60s速览" 
+            description="新闻摘要与天气聚合，多城市切换。聚焦信息呈现效率，简洁概览今日热点。" 
+            link="https://60s.quanxin365.cn" 
+            linkText="进入速览"
+            cardClass="card-news"
+        />
+        <Card 
+            icon="📊" 
+            title="每日金价观察站" 
+            description="多源贵金属价格实时展示，覆盖国内国际与银行报价。专业级市场行情呈现。" 
+            link="https://jinjia.quanxin365.cn" 
+            linkText="查看金价"
+            cardClass="card-gold"
+        />
+        <Card 
+            icon="📝" 
+            title="我的博客" 
+            description="随手记录生活日常，一个公开的记事本。" 
+            link="https://blog.quanxin365.cn" 
+            linkText="阅读文章"
+            cardClass="card-blog"
+        />
+        <Card 
+            icon="🛒" 
+            title="更多服务" 
+            description="优选商城 · 电话卡办理服务，多运营商套餐对比，省心选号，便捷办理。" 
+            link="https://haoka.quanxin365.cn" 
+            linkText="了解更多"
+            cardClass="card-service"
+        />
+    </main>
+</BaseLayout>
